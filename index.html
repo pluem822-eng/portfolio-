@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+    <div class="overlay"></div>
+    <div class="grid-bg"></div>
+
+    <div class="parallax left"></div>
+    <div class="parallax right"></div>
+
+    <div class="hero-content">
+        <img src="033.jpg" class="profile-pic">
+        <h1>นาย จักรินทร์ ยอดยาจิตร</h1>
+        <p class="subtitle">Information Technology Student</p>
+
+        <div class="hero-info">
+            <span>💻 IT</span>
+            <span>🌐 Network</span>
+            <span>🛠 Hardware</span>
+        </div>
+    </div>
+</header>
+
+<section class="container about">
+    <h2>เกี่ยวกับฉัน</h2>
+    <div class="card">
+        <p>
+            นักศึกษาด้านเทคโนโลยีสารสนเทศ สนใจงานด้านเครือข่าย
+            ระบบคอมพิวเตอร์ และการเขียนโปรแกรม
+            มีความมุ่งมั่นพัฒนาทักษะเพื่อเข้าสู่งานสาย IT อย่างมืออาชีพ
+        </p>
+    </div>
+</section>
+
+<section class="container skills section-bg">
+    <h2>ทักษะ</h2>
+    <div class="skill-grid">
+        <div class="skill-item">🌐 Networking Basics</div>
+        <div class="skill-item">🖥 Computer Hardware</div>
+        <div class="skill-item">⌨ Programming Basics</div>
+        <div class="skill-item">🧰 IT Support</div>
+        <div class="skill-item">📊 Microsoft Office</div>
+    </div>
+</section>
+
+<section class="container projects">
+    <h2>ผลงาน</h2>
+
+    <div class="timeline">
+        <div class="project-box">
+            <h3>ระบบจัดการข้อมูลเบื้องต้น</h3>
+            <p>พัฒนาโปรเจกต์เพื่อจัดเก็บ ค้นหา และจัดการข้อมูลพื้นฐาน</p>
+        </div>
+
+        <div class="project-box">
+            <h3>งานประกอบและวิเคราะห์คอมพิวเตอร์</h3>
+            <p>ประกอบเครื่อง ตรวจสอบอุปกรณ์ และวิเคราะห์ปัญหา Hardware</p>
+        </div>
+    </div>
+</section>
+
+<section class="container contact section-bg">
+    <h2>ติดต่อ</h2>
+    <div class="card contact-card">
+        <p><b>Email:</b> pluem822@gmail.com</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Portfolio • Chakrin Yodyajit</p>
+</footer>
+
+<script>
+const hero = document.querySelector('.hero');
+const items = document.querySelectorAll('.parallax');
+
+hero.addEventListener('mousemove', e => {
+    const rect = hero.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    items.forEach((item, i) => {
+        const speed = (i + 1) * 35;
+        item.style.transform = `translate(${x / speed}px, ${y / speed}px)`;
+    });
+});
+
+hero.addEventListener('mouseleave', () => {
+    items.forEach(item => item.style.transform = 'translate(0,0)');
+});
+</script>
+
+</body>
+</html>
